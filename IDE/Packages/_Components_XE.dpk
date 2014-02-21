@@ -1,0 +1,55 @@
+package _Components_XE;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'My Components'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  dclstd,
+  _Functions_XE,
+  bdertl,
+  adortl;
+
+contains
+  _ACCombo in '..\..\Components\_ACCombo.pas',
+  _ACEdit in '..\..\Components\_ACEdit.pas',
+  _ButtonList in '..\..\Components\_ButtonList.pas',
+  _Calendar in '..\..\Components\_Calendar.pas',
+  _CaptionBevel in '..\..\Components\_CaptionBevel.pas',
+  _DBSQL in '..\..\Components\_DBSQL.pas',
+  _DoubleLabel in '..\..\Components\_DoubleLabel.pas',
+  _EnumFiles in '..\..\Components\_EnumFiles.pas',
+  _Frames in '..\..\Components\_Frames.pas',
+  _HintWindow in '..\..\Components\_HintWindow.pas',
+  _LinkLabelMy in '..\..\Components\_LinkLabelMy.pas',
+  _SmartDock in '..\..\Components\_SmartDock.pas',
+  _SmartDockTree2 in '..\..\Components\_SmartDockTree2.pas',
+  _ToolBar in '..\..\Components\_ToolBar.pas',
+  _UFKBBanner in '..\..\Components\_UFKBBanner.pas',
+  _VariantEdit in '..\..\Components\_VariantEdit.pas';
+
+end.
+

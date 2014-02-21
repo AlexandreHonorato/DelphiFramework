@@ -1,0 +1,96 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{C6FEC2FD-E049-4523-9DB9-B2E14164A2A4}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="_Functions_XE.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="_Components_XE.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="_DesignTime_XE.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="_CodeBase_XE.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="MyIDEExtension_XE.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="_CodeTemplates_XE.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="_Functions_XE">
+			<MSBuild Projects="_Functions_XE.dproj"/>
+		</Target>
+		<Target Name="_Functions_XE:Clean">
+			<MSBuild Projects="_Functions_XE.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="_Functions_XE:Make">
+			<MSBuild Projects="_Functions_XE.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="_Components_XE">
+			<MSBuild Projects="_Components_XE.dproj"/>
+		</Target>
+		<Target Name="_Components_XE:Clean">
+			<MSBuild Projects="_Components_XE.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="_Components_XE:Make">
+			<MSBuild Projects="_Components_XE.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="_DesignTime_XE">
+			<MSBuild Projects="_DesignTime_XE.dproj"/>
+		</Target>
+		<Target Name="_DesignTime_XE:Clean">
+			<MSBuild Projects="_DesignTime_XE.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="_DesignTime_XE:Make">
+			<MSBuild Projects="_DesignTime_XE.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="_CodeBase_XE">
+			<MSBuild Projects="_CodeBase_XE.dproj"/>
+		</Target>
+		<Target Name="_CodeBase_XE:Clean">
+			<MSBuild Projects="_CodeBase_XE.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="_CodeBase_XE:Make">
+			<MSBuild Projects="_CodeBase_XE.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="MyIDEExtension_XE">
+			<MSBuild Projects="MyIDEExtension_XE.dproj"/>
+		</Target>
+		<Target Name="MyIDEExtension_XE:Clean">
+			<MSBuild Projects="MyIDEExtension_XE.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="MyIDEExtension_XE:Make">
+			<MSBuild Projects="MyIDEExtension_XE.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="_CodeTemplates_XE">
+			<MSBuild Projects="_CodeTemplates_XE.dproj"/>
+		</Target>
+		<Target Name="_CodeTemplates_XE:Clean">
+			<MSBuild Projects="_CodeTemplates_XE.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="_CodeTemplates_XE:Make">
+			<MSBuild Projects="_CodeTemplates_XE.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="_Functions_XE;_Components_XE;_DesignTime_XE;_CodeBase_XE;MyIDEExtension_XE;_CodeTemplates_XE"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="_Functions_XE:Clean;_Components_XE:Clean;_DesignTime_XE:Clean;_CodeBase_XE:Clean;MyIDEExtension_XE:Clean;_CodeTemplates_XE:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="_Functions_XE:Make;_Components_XE:Make;_DesignTime_XE:Make;_CodeBase_XE:Make;MyIDEExtension_XE:Make;_CodeTemplates_XE:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

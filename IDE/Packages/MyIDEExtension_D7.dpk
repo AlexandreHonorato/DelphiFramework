@@ -1,0 +1,97 @@
+package MyIDEExtension_D7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'My IDE Extension'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  designide,
+  vclactnband,
+  vclx,
+  _Functions_D7,
+  _DesignTime_D7,
+  dbrtl,
+  dsnap,
+  dsnapcon,
+  _Components_D7,
+  _CodeBase_D7,
+  vcldb,
+  adortl,
+  bdertl,
+  PngComponentsD7,
+  PNG_D7;
+
+{%RC '..\MyIDEExtension\Images\IDEImages.rc'}
+
+contains
+  uExtension in '..\MyIDEExtension\uExtension.pas',
+  uUnits in '..\MyIDEExtension\BuisinessLogic\uUnits.pas',
+  uEditorOperations in '..\MyIDEExtension\BuisinessLogic\uEditorOperations.pas',
+  uErrorGUIDProcess in '..\MyIDEExtension\BuisinessLogic\uErrorGUIDProcess.pas',
+  uIDEOperations in '..\MyIDEExtension\BuisinessLogic\uIDEOperations.pas',
+  uAddToDoDlg in '..\MyIDEExtension\Dialogs\uAddToDoDlg.pas' {frmAddToDo},
+  uComponentsMenu in '..\MyIDEExtension\Menus\uComponentsMenu.pas',
+  uProjectMenu in '..\MyIDEExtension\Menus\uProjectMenu.pas',
+  uClasses in '..\MyIDEExtension\BuisinessLogic\uClasses.pas',
+  uTokenMenu in '..\MyIDEExtension\uTokenMenu.pas',
+  uCodeObjectsDlg in '..\MyIDEExtension\Dialogs\uCodeObjectsDlg.pas' {dlgCodeObjects},
+  uCOD_Controller_Base in '..\MyIDEExtension\Dialogs\Base\uCOD_Controller_Base.pas',
+  uCOD_Controller_Base_MultipleResults in '..\MyIDEExtension\Dialogs\Base\uCOD_Controller_Base_MultipleResults.pas',
+  uCOD_Controller_Base_SingleResult in '..\MyIDEExtension\Dialogs\Base\uCOD_Controller_Base_SingleResult.pas',
+  uCOD_Model_Base in '..\MyIDEExtension\Dialogs\Base\uCOD_Model_Base.pas',
+  uCOD_Model_Base_MultipleResults in '..\MyIDEExtension\Dialogs\Base\uCOD_Model_Base_MultipleResults.pas',
+  uCOD_Model_Base_SingleResult in '..\MyIDEExtension\Dialogs\Base\uCOD_Model_Base_SingleResult.pas',
+  uCOD_Controller_CloseUnits in '..\MyIDEExtension\Dialogs\CloseUnits\uCOD_Controller_CloseUnits.pas',
+  uCOD_Controller_UseUnit in '..\MyIDEExtension\Dialogs\UseUnit\uCOD_Controller_UseUnit.pas',
+  uCOD_Model_UseUnit in '..\MyIDEExtension\Dialogs\UseUnit\uCOD_Model_UseUnit.pas',
+  uCOD_Model_CloseUnits in '..\MyIDEExtension\Dialogs\CloseUnits\uCOD_Model_CloseUnits.pas',
+  uCOD_Model_OpenUnits in '..\MyIDEExtension\Dialogs\OpenUnits\uCOD_Model_OpenUnits.pas',
+  uCOD_Controller_OpenUnits in '..\MyIDEExtension\Dialogs\OpenUnits\uCOD_Controller_OpenUnits.pas',
+  uCOD_Model_RemoveUnit in '..\MyIDEExtension\Dialogs\RemoveUnit\uCOD_Model_RemoveUnit.pas',
+  uCOD_Controller_RemoveUnit in '..\MyIDEExtension\Dialogs\RemoveUnit\uCOD_Controller_RemoveUnit.pas',
+  uUI in '..\MyIDEExtension\uUI.pas',
+  uCOD_Controller_GotoGodeObject in '..\MyIDEExtension\Dialogs\GotoCodeObject\uCOD_Controller_GotoGodeObject.pas',
+  uDeleteUnitFilesDlg in '..\MyIDEExtension\Dialogs\uDeleteUnitFilesDlg.pas' {dlgDeleteUnitFiles},
+  uCOD_Controller_InsertType in '..\MyIDEExtension\Dialogs\InsertType\uCOD_Controller_InsertType.pas',
+  uDOMAIN in '..\MyIDEExtension\BuisinessLogic\uDOMAIN.pas',
+  uCOD_ModelBuilder in '..\MyIDEExtension\BuisinessLogic\uCOD_ModelBuilder.pas',
+  uFrameWorkUnitsDlg in '..\MyIDEExtension\Dialogs\uFrameWorkUnitsDlg.pas' {dlgFrameWorkUnits},
+  uInfoPanelFrm in '..\MyIDEExtension\uInfoPanelFrm.pas' {frmInfoPanel},
+  uNotifications in '..\MyIDEExtension\BuisinessLogic\uNotifications.pas',
+  uCallStackAnalyzeBootstrap_Itf in '..\MyIDEExtension\CallStack\uCallStackAnalyzeBootstrap_Itf.pas',
+  uCallStack_Domain in '..\MyIDEExtension\CallStack\uCallStack_Domain.pas',
+  uCallStackAnalyzeFrm in '..\MyIDEExtension\CallStack\uCallStackAnalyzeFrm.pas' {frmCallStackAnalyze},
+  uSourceParser_CallStack in '..\MyIDEExtension\CallStack\uSourceParser_CallStack.pas',
+  uStreamParser_CallStack in '..\MyIDEExtension\CallStack\uStreamParser_CallStack.pas',
+  uCallStackAnalyzeBootstrap_IDE in '..\MyIDEExtension\CallStack\uCallStackAnalyzeBootstrap_IDE.pas',
+  uCallStack_ViewModels in '..\MyIDEExtension\CallStack\uCallStack_ViewModels.pas',
+  uUsesAnalyzeFrm in '..\MyIDEExtension\UsesAnalyze\uUsesAnalyzeFrm.pas' {frmUsesAnalyze},
+  uUsesAnalyzeBootstrap_Itf in '..\MyIDEExtension\UsesAnalyze\uUsesAnalyzeBootstrap_Itf.pas',
+  uUsesAnalyzeBootstrap_IDE in '..\MyIDEExtension\UsesAnalyze\uUsesAnalyzeBootstrap_IDE.pas',
+  uRunConfigDlg in '..\MyIDEExtension\Dialogs\uRunConfigDlg.pas' {dlgRunConfig};
+
+end.

@@ -1,0 +1,44 @@
+package _CodeTemplates_XE;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'My Code Templates'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  _Functions_XE,
+  DesignIDE,
+  _DesignTime_XE;
+
+contains
+  uCodeTemplatesFrm in '..\MyCodeTemplates\uCodeTemplatesFrm.pas' {frmCodeTemplates},
+  uCodeTemplateFrm in '..\MyCodeTemplates\uCodeTemplateFrm.pas' {frmCodeTemplate},
+  uCodeTemplates_Extension in '..\MyCodeTemplates\uCodeTemplates_Extension.pas',
+  uCodeTemplates_L2 in '..\MyCodeTemplates\uCodeTemplates_L2.pas',
+  uCodeTemplates_L3 in '..\MyCodeTemplates\uCodeTemplates_L3.pas',
+  uCodeTemplates_L4 in '..\MyCodeTemplates\uCodeTemplates_L4.pas',
+  uCodeTemplates in '..\MyCodeTemplates\uCodeTemplates.pas';
+
+end.

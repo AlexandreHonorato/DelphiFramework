@@ -1,0 +1,52 @@
+package _CodeBase_D7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'My CodeBase Core'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  _Functions_D7,
+  vcl,
+  designide,
+  vclactnband,
+  vclx,
+  dbrtl,
+  dsnap,
+  dsnapcon,
+  _DesignTime_D7;
+
+contains
+  uCodeEntities in '..\CodeBaseEngine\Domain\uCodeEntities.pas',
+  uSourceParser in '..\CodeBaseEngine\SourceParsers\uSourceParser.pas',
+  uParseInfo in '..\CodeBaseEngine\Domain\uParseInfo.pas',
+  uSourceParser_CodeBase in '..\CodeBaseEngine\SourceParsers\uSourceParser_CodeBase.pas',
+  uCodeBase in '..\CodeBaseEngine\Domain\uCodeBase.pas',
+  uStreamParser in '..\CodeBaseEngine\StreamParsers\uStreamParser.pas',
+  uFileMappers in '..\CodeBaseEngine\FileMappers\uFileMappers.pas',
+  uFileMappers_IDE in '..\CodeBaseEngine\FileMappers\uFileMappers_IDE.pas',
+  uStreamParser_CodeUnit in '..\CodeBaseEngine\StreamParsers\uStreamParser_CodeUnit.pas',
+  uParseDirectives in '..\CodeBaseEngine\SourceParsers\uParseDirectives.pas';
+
+end.

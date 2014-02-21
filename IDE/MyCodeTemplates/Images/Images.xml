@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<Images>
+<Group Name="Default">
+<Image ID="bmpFolder" FileName="folder.BMP" />
+<Image ID="bmpPage" FileName="page.BMP" />
+<Image ID="bmpPageRed" FileName="page_red.BMP" />
+</Group>
+</Images>

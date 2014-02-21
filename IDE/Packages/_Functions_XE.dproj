@@ -1,0 +1,178 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{1894FE9B-3550-4396-94B1-050F8FE99BF2}</ProjectGuid>
+			<MainSource>_Functions_XE.dpk</MainSource>
+			<ProjectVersion>12.2</ProjectVersion>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform>Win32</Platform>
+			<AppType>Package</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<GenPackage>true</GenPackage>
+			<DCC_Description>My Functions</DCC_Description>
+			<GenDll>true</GenDll>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_ExeOutput>.\$(Config)\$(Platform)</DCC_ExeOutput>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_DUPLICATE_CTOR_DTOR>false</DCC_DUPLICATE_CTOR_DTOR>
+			<DCC_SYMBOL_PLATFORM>false</DCC_SYMBOL_PLATFORM>
+			<DCC_UNSUPPORTED_CONSTRUCT>false</DCC_UNSUPPORTED_CONSTRUCT>
+			<DCC_BplOutput>D:\Andrey\Delphi\__FrameWork.BIN\BIN_XE\</DCC_BplOutput>
+			<DCC_DcuOutput>D:\Andrey\Delphi\__FrameWork.BIN\DCU_XE\</DCC_DcuOutput>
+			<DCC_DcpOutput>D:\Andrey\Delphi\__FrameWork.BIN\BIN_XE\</DCC_DcpOutput>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="_Functions_XE.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="rtl.dcp"/>
+			<DCCReference Include="vcl.dcp"/>
+			<DCCReference Include="dsnap.dcp"/>
+			<DCCReference Include="dbrtl.dcp"/>
+			<DCCReference Include="dsnapcon.dcp"/>
+			<DCCReference Include="..\..\NotMy\mwPasParser.pas"/>
+			<DCCReference Include="..\..\Classes\_Actions.pas"/>
+			<DCCReference Include="..\..\Classes\_ActionScope.pas"/>
+			<DCCReference Include="..\..\Classes\_ActiveScript.pas"/>
+			<DCCReference Include="..\..\Classes\_AsyncCalls.pas"/>
+			<DCCReference Include="..\..\Classes\_BaseDataSource_ViewModel.pas"/>
+			<DCCReference Include="..\..\Classes\_Commands.pas"/>
+			<DCCReference Include="..\..\Classes\_DataSourceListView.pas"/>
+			<DCCReference Include="..\..\Classes\_DateUtils.pas"/>
+			<DCCReference Include="..\..\Classes\_Debug.pas"/>
+			<DCCReference Include="..\..\Classes\_Dictionary.pas"/>
+			<DCCReference Include="..\..\Classes\_DomainEvents.pas"/>
+			<DCCReference Include="..\..\Classes\_DomainEventsList.pas"/>
+			<DCCReference Include="..\..\Classes\_Entity.pas"/>
+			<DCCReference Include="..\..\Classes\_EntitySelection.pas"/>
+			<DCCReference Include="..\..\Classes\_IntList.pas"/>
+			<DCCReference Include="..\..\Classes\_IntTime.pas"/>
+			<DCCReference Include="..\..\Classes\_Lists.pas"/>
+			<DCCReference Include="..\..\Classes\_MessageBus.pas"/>
+			<DCCReference Include="..\..\Classes\_MVC_Controller.pas"/>
+			<DCCReference Include="..\..\Classes\_MVC_Model.pas"/>
+			<DCCReference Include="..\..\Classes\_NonCOMInterface.pas"/>
+			<DCCReference Include="..\..\Classes\_Null.pas"/>
+			<DCCReference Include="..\..\Classes\_RegClassesLists.pas"/>
+			<DCCReference Include="..\..\Classes\_Registry.pas"/>
+			<DCCReference Include="..\..\Classes\_SingleInstance.pas"/>
+			<DCCReference Include="..\..\Classes\_SortList.pas"/>
+			<DCCReference Include="..\..\Classes\_StringSplitter.pas"/>
+			<DCCReference Include="..\..\Classes\_Timer.pas"/>
+			<DCCReference Include="..\..\Classes\_Users.pas"/>
+			<DCCReference Include="..\..\Classes\_UtilWindow.pas"/>
+			<DCCReference Include="..\..\Classes\_ViewModel.pas"/>
+			<DCCReference Include="..\..\Classes\_WinWord.pas"/>
+			<DCCReference Include="..\..\Functions\_AutoDestroyList.pas"/>
+			<DCCReference Include="..\..\Functions\_CallStack.pas"/>
+			<DCCReference Include="..\..\Functions\_ConnectionSettings.pas"/>
+			<DCCReference Include="..\..\Functions\_Files.pas"/>
+			<DCCReference Include="..\..\Functions\_GDI.pas"/>
+			<DCCReference Include="..\..\Functions\_InputBox.pas">
+				<Form>frmInputBox</Form>
+			</DCCReference>
+			<DCCReference Include="..\..\Functions\_ListView_VCL_ZZZ.pas"/>
+			<DCCReference Include="..\..\Functions\_Logs.pas"/>
+			<DCCReference Include="..\..\Functions\_Misc.pas"/>
+			<DCCReference Include="..\..\Functions\_PTHFiles.pas"/>
+			<DCCReference Include="..\..\Functions\_Strings.pas"/>
+			<DCCReference Include="..\..\Functions\_TreeView_VCL.pas"/>
+			<DCCReference Include="..\..\Functions\_UserIdentity.pas"/>
+			<DCCReference Include="..\..\Functions\_VCL_ZZZ.pas"/>
+			<DCCReference Include="..\..\Functions\_XML10.pas"/>
+			<DCCReference Include="..\..\TLB_XE\TLB_Excel_XP.pas"/>
+			<DCCReference Include="..\..\TLB_XE\TLB_MSScriptControl_10.pas"/>
+			<DCCReference Include="..\..\TLB_XE\TLB_MSXML.pas"/>
+			<DCCReference Include="..\..\TLB_XE\TLB_Office_XP.pas"/>
+			<DCCReference Include="..\..\TLB_XE\TLB_VBIDE_XP.pas"/>
+			<DCCReference Include="..\..\TLB_XE\TLB_Word_XP.pas"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">_Functions_XE.dpk</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp150.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

@@ -1,0 +1,92 @@
+package _Functions_XE;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'My Functions'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  dsnap,
+  dbrtl,
+  dsnapcon;
+
+contains
+  mwPasParser in '..\..\NotMy\mwPasParser.pas',
+  _Actions in '..\..\Classes\_Actions.pas',
+  _ActionScope in '..\..\Classes\_ActionScope.pas',
+  _ActiveScript in '..\..\Classes\_ActiveScript.pas',
+  _AsyncCalls in '..\..\Classes\_AsyncCalls.pas',
+  _BaseDataSource_ViewModel in '..\..\Classes\_BaseDataSource_ViewModel.pas',
+  _Commands in '..\..\Classes\_Commands.pas',
+  _DataSourceListView in '..\..\Classes\_DataSourceListView.pas',
+  _DateUtils in '..\..\Classes\_DateUtils.pas',
+  _Debug in '..\..\Classes\_Debug.pas',
+  _Dictionary in '..\..\Classes\_Dictionary.pas',
+  _DomainEvents in '..\..\Classes\_DomainEvents.pas',
+  _DomainEventsList in '..\..\Classes\_DomainEventsList.pas',
+  _Entity in '..\..\Classes\_Entity.pas',
+  _EntitySelection in '..\..\Classes\_EntitySelection.pas',
+  _IntList in '..\..\Classes\_IntList.pas',
+  _IntTime in '..\..\Classes\_IntTime.pas',
+  _Lists in '..\..\Classes\_Lists.pas',
+  _MessageBus in '..\..\Classes\_MessageBus.pas',
+  _MVC_Controller in '..\..\Classes\_MVC_Controller.pas',
+  _MVC_Model in '..\..\Classes\_MVC_Model.pas',
+  _NonCOMInterface in '..\..\Classes\_NonCOMInterface.pas',
+  _Null in '..\..\Classes\_Null.pas',
+  _RegClassesLists in '..\..\Classes\_RegClassesLists.pas',
+  _Registry in '..\..\Classes\_Registry.pas',
+  _SingleInstance in '..\..\Classes\_SingleInstance.pas',
+  _SortList in '..\..\Classes\_SortList.pas',
+  _StringSplitter in '..\..\Classes\_StringSplitter.pas',
+  _Timer in '..\..\Classes\_Timer.pas',
+  _Users in '..\..\Classes\_Users.pas',
+  _UtilWindow in '..\..\Classes\_UtilWindow.pas',
+  _ViewModel in '..\..\Classes\_ViewModel.pas',
+  _WinWord in '..\..\Classes\_WinWord.pas',
+  _AutoDestroyList in '..\..\Functions\_AutoDestroyList.pas',
+  _CallStack in '..\..\Functions\_CallStack.pas',
+  _ConnectionSettings in '..\..\Functions\_ConnectionSettings.pas',
+  _Files in '..\..\Functions\_Files.pas',
+  _GDI in '..\..\Functions\_GDI.pas',
+  _InputBox in '..\..\Functions\_InputBox.pas' {frmInputBox},
+  _ListView_VCL_ZZZ in '..\..\Functions\_ListView_VCL_ZZZ.pas',
+  _Logs in '..\..\Functions\_Logs.pas',
+  _Misc in '..\..\Functions\_Misc.pas',
+  _PTHFiles in '..\..\Functions\_PTHFiles.pas',
+  _Strings in '..\..\Functions\_Strings.pas',
+  _TreeView_VCL in '..\..\Functions\_TreeView_VCL.pas',
+  _UserIdentity in '..\..\Functions\_UserIdentity.pas',
+  _VCL_ZZZ in '..\..\Functions\_VCL_ZZZ.pas',
+  _XML10 in '..\..\Functions\_XML10.pas',
+  TLB_Excel_XP in '..\..\TLB_XE\TLB_Excel_XP.pas',
+  TLB_MSScriptControl_10 in '..\..\TLB_XE\TLB_MSScriptControl_10.pas',
+  TLB_MSXML in '..\..\TLB_XE\TLB_MSXML.pas',
+  TLB_Office_XP in '..\..\TLB_XE\TLB_Office_XP.pas',
+  TLB_VBIDE_XP in '..\..\TLB_XE\TLB_VBIDE_XP.pas',
+  TLB_Word_XP in '..\..\TLB_XE\TLB_Word_XP.pas';
+
+end.
+

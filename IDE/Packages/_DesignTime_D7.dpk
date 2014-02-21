@@ -1,0 +1,53 @@
+package _DesignTime_D7;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'My DesignTime'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  vclactnband,
+  vclx,
+  vcl,
+  _Functions_D7,
+  _Components_D7,
+  vcldb,
+  dbrtl,
+  adortl,
+  bdertl,
+  dsnap,
+  dsnapcon,
+  VclSmp;
+
+contains
+  _ToolsAPI in '..\..\DesignTime\_ToolsAPI.pas',
+  uAddEditSQLDlg in '..\..\DesignTime\uAddEditSQLDlg.pas' {frmAddEditSQL},
+  uAddMultipleSQLsDlg in '..\..\DesignTime\uAddMultipleSQLsDlg.pas' {frmAddMultipleSQLs},
+  uButtonListPropertyEditor in '..\..\DesignTime\uButtonListPropertyEditor.pas',
+  uMultilineEdit in '..\..\DesignTime\uMultilineEdit.pas' {frmMultilineEdit},
+  uSQLMgrEditorDlg in '..\..\DesignTime\uSQLMgrEditorDlg.pas' {frmSQLMgrEditor};
+
+end.

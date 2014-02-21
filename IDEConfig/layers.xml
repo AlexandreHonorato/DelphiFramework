@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<Layers>
+<Names>
+	<Layer ID="0" Name="UNKNOWN" Color="CCCCCC" />
+	<Layer ID="1" Name="UI" Color="9999FF" />
+	<Layer ID="2" Name="VIEW_MODEL" Color="FF00CC" />
+	<Layer ID="3" Name="BLL" Color="FF6699" />
+	<Layer ID="4" Name="DOMAIN" Color="FF9966" />
+	<Layer ID="5" Name="APP_INFRASTRUCTURE" Color="33FF99" />
+	<Layer ID="6" Name="INFRASTRUCTURE" Color="00CC33" />
+	<Layer ID="7" Name="PL" Color="66CCFF" />
+</Names>
+<Map>
+	<Layer ID="0" Name="UNKNOWN">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="2" />
+			<Layer ID="1" Name="UI" UsesStatus="1" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="1" />
+			<Layer ID="3" Name="BLL" UsesStatus="1" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="1" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="1" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="1" />
+			<Layer ID="7" Name="PL" UsesStatus="1" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="2" />
+			<Layer ID="1" Name="UI" UsesStatus="1" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="1" />
+			<Layer ID="3" Name="BLL" UsesStatus="1" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="1" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="1" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="1" />
+			<Layer ID="7" Name="PL" UsesStatus="1" />
+		</Section>
+	</Layer>
+	<Layer ID="1" Name="UI">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="2" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="2" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+	</Layer>
+	<Layer ID="2" Name="VIEW_MODEL">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="0" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="0" />
+			<Layer ID="1" Name="UI" UsesStatus="2" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+	</Layer>
+	<Layer ID="3" Name="BLL">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="0" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="0" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+	</Layer>
+	<Layer ID="4" Name="DOMAIN">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+	</Layer>
+	<Layer ID="5" Name="APP_INFRASTRUCTURE">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="2" />
+			<Layer ID="1" Name="UI" UsesStatus="2" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="7" Name="PL" UsesStatus="2" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="2" />
+			<Layer ID="1" Name="UI" UsesStatus="2" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="2" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="7" Name="PL" UsesStatus="2" />
+		</Section>
+	</Layer>
+	<Layer ID="6" Name="INFRASTRUCTURE">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="0" />
+			<Layer ID="3" Name="BLL" UsesStatus="0" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="0" />
+			<Layer ID="3" Name="BLL" UsesStatus="0" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="7" Name="PL" UsesStatus="0" />
+		</Section>
+	</Layer>
+	<Layer ID="7" Name="PL">
+		<Section ID="0">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="0" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="2" />
+		</Section>
+		<Section ID="1">
+			<Layer ID="0" Name="UNKNOWN" UsesStatus="1" />
+			<Layer ID="1" Name="UI" UsesStatus="0" />
+			<Layer ID="2" Name="VIEW_MODEL" UsesStatus="2" />
+			<Layer ID="3" Name="BLL" UsesStatus="0" />
+			<Layer ID="4" Name="DOMAIN" UsesStatus="2" />
+			<Layer ID="5" Name="APP_INFRASTRUCTURE" UsesStatus="2" />
+			<Layer ID="6" Name="INFRASTRUCTURE" UsesStatus="0" />
+			<Layer ID="7" Name="PL" UsesStatus="2" />
+		</Section>
+	</Layer>
+</Map>
+</Layers>

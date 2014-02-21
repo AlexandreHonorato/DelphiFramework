@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<CodeTemplates>
+
+<Folder Caption="Variables" HotKey="V">
+  <Template Caption="Integer variable" HotKey="I" ShortCut="i" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="i" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: Integer;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Integer variable (var)" HotKey="" ShortCut="vi" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="i" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[var {{VarName}}: Integer;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="String variable" HotKey="S" ShortCut="s" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="s" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: String;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="String variable (var)" HotKey="" ShortCut="vs" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="s" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[var {{VarName}}: String;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="array of char" HotKey="" ShortCut="vc" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="c" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[var {{VarName}}: array[0..255] of char;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Lazy object create" HotKey="L" >
+    <Variables>
+      <Variable Caption="Object name" Name="ObjectName" DefaultValue="" />
+      <Variable Caption="Class name" Name="ClassName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[var F{{ObjectName}}: {{ClassName}};
+
+function {{ObjectName}}: {{ClassName}};
+begin
+PushError('');
+if not Assigned(F{{ObjectName}}) then
+  begin
+  cs.Set_('');
+  F{{ObjectName}} := {{ClassName}}.Create;
+  RegisterAutoDestroy(ADL_Undefined, F{{ObjectName}})
+  end;
+Result := F{{ObjectName}};
+PopError;
+end;
+]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+<Template Caption="IntToStr" ShortCut="its">
+  <Variables>
+  </Variables>
+  <Blocks>
+  <Block Caption="Declaration">
+  <![CDATA[IntToStr(|)]]> 
+  </Block>
+  </Blocks>
+</Template>
+
+<Template Caption="AnsiUpperCase" ShortCut="auc">
+  <Variables>
+  </Variables>
+  <Blocks>
+  <Block Caption="Declaration">
+  <![CDATA[AnsiUpperCase(|)]]> 
+  </Block>
+  </Blocks>
+</Template>
+
+</Folder>
+
+<Folder Caption="Classes" HotKey="C">
+  <Template Caption="constructor" ShortCut="ctor" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[constructor Create; override;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="constructor" ShortCut="ctro" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[constructor Create; override;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="constructor (AOwner)" ShortCut="ctora" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[constructor Create(AOwner: TComponent); override;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="destructor" ShortCut="dtor" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[destructor Destroy; override;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="constructor / destructor" ShortCut="ctdt" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[constructor Create; override;
+destructor Destroy; override;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="reintroduce" ShortCut="re" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[reintroduce;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="override" ShortCut="ov" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[override;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="inherited" ShortCut="in" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[inherited ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="virtual / abstract" ShortCut="va" >
+    <Variables />
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[virtual; abstract;]]>
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Property" HotKey="P">
+  <Template Caption="Field" HotKey="1">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}: {{PropType}} read F{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="Get" HotKey="2">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}: {{PropType}} read Get{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="Field/Field" HotKey="3">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}: {{PropType}} read F{{PropName}} write F{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="Field/Set" HotKey="4">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}: {{PropType}} read F{{PropName}} write Set{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="Get/Set" HotKey="5">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}: {{PropType}} read Get{{PropName}} write Set{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="Get[Index]" HotKey="6">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}[Index: Integer]: {{PropType}} read Get{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="ByStrID[StrID]" HotKey="7">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property By{{PropName}}[const A{{PropName}}: Integer]: {{PropType}} read GetBy{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="Get/Set[Index]" HotKey="8">
+    <Variables>
+      <Variable Caption="Property name" Name="PropName" DefaultValue="" />
+      <Variable Caption="Property type" Name="PropType" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[property {{PropName}}[Index: Integer]: {{PropType}} read Get{{PropName}} write Set{{PropName}}; ]]>
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Lists" HotKey="L">
+  <Template Caption="TList variable" HotKey="L">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="Lst" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: TList;]]> 
+      </Block>
+      <Block Caption="Create">
+        <![CDATA[{{VarName}} := TList.Create;]]> 
+      </Block>
+      <Block Caption="Destroy">
+        <![CDATA[if Assigned({{VarName}}) then {{VarName}}.Free;]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="TStringList variable" HotKey="S">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="Lst" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: TStringList;]]> 
+      </Block>
+      <Block Caption="Create">
+        <![CDATA[{{VarName}} := TStringList.Create;]]> 
+      </Block>
+      <Block Caption="Destroy">
+        <![CDATA[if Assigned({{VarName}}) then {{VarName}}.Free;]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="TDebugList variable" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="Lst" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: TDebugList;]]> 
+      </Block>
+      <Block Caption="Create">
+        <![CDATA[{{VarName}} := TDebugList.Create;]]> 
+      </Block>
+      <Block Caption="Destroy">
+        <![CDATA[if Assigned({{VarName}}) then {{VarName}}.Free;]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="TDebugStringList variable" >
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="Lst" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: TDebugStringList;]]> 
+      </Block>
+      <Block Caption="Create">
+        <![CDATA[{{VarName}} := TDebugStringList.Create;]]> 
+      </Block>
+      <Block Caption="Destroy">
+        <![CDATA[if Assigned({{VarName}}) then {{VarName}}.Free;]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="TList Sort Proc" HotKey="P">
+    <Variables>
+      <Variable Caption="Procedure name" Name="ProcName" DefaultValue="SortProc" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[function {{ProcName}}(Item1, Item2: Pointer): Integer;
+begin
+|
+end;
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Exceptions" HotKey="E">
+  <Template Caption="raise Exception" HotKey="R">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[raise Exception.CreateFmt('|', []);]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="raise ExceptionFmt" HotKey="F">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[raise Exception.CreateFmt('|', []);]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="on E: Exception do" HotKey="O">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[on E: Exception do |;]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="PushError" ShortCut="pe">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[cs.Push('');|]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="SetError" ShortCut="se">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[cs.Set_('');|]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="PopError" ShortCut="po">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[cs.Pop;|]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="try..except" HotKey="E" ShortCut="trye">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[try
+  
+except
+  |
+end; // try]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="try..finally" HotKey="F" ShortCut="tryf">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[try
+  
+finally
+  |
+end; // try]]> 
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Language">
+  <Template Caption="begin / end" HotKey="" ShortCut="be" >
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[begin
+|
+end;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="function implementation" HotKey="" ShortCut="fni" >
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[function |(): ;
+begin
+
+end;
+]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="procedure implementation" HotKey="" ShortCut="pri" >
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[procedure |();
+begin
+
+end;
+]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="for" HotKey="" ShortCut="for" >
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[for i := 0 to |.Count - 1 do]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="do nothing" HotKey="" ShortCut="dn" >
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[// do nothing]]>
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="XML" HotKey="X">
+  <Template Caption="Document variable" HotKey="D">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="doc" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: IXMLDoc;]]> 
+      </Block>
+      <Block Caption="xmlLoad">
+        <![CDATA[xmlLoad('|', {{VarName}});]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Node variable" HotKey="V">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="node" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{VarName}}: IXMLDOMNode;]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="xmlGetNode" HotKey="N">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="doc.documentElement" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[xmlGetNode({{VarName}}, '|', True);]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="xmlGetAttribute" HotKey="A">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="node" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[xmlGetAttribute({{VarName}}, '|');]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="for i := 0 to .childNodes.length - 1 do" HotKey="F">
+    <Variables>
+      <Variable Caption="Parent node" Name="ParentNode" DefaultValue="doc.documentElement" />
+      <Variable Caption="Child node" Name="ChildNode" DefaultValue="node" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[
+for i := 0 to {{ParentNode}}.childNodes.length - 1 do
+  begin
+  {{ChildNode}} := {{ParentNode}}.childNodes.item[i];
+  |
+  end;
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="TextFile" HotKey="F">
+  <Template Caption="TextFile" HotKey="F">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declare Variable">
+        <![CDATA[f: TextFile;]]> 
+      </Block>
+      <Block Caption="AssignFile">
+        <![CDATA[AssignFile(f, |);]]> 
+      </Block>
+      <Block Caption="Append">
+        <![CDATA[Append(f);]]> 
+      </Block>
+      <Block Caption="Reset">
+        <![CDATA[Reset(f);]]> 
+      </Block>
+      <Block Caption="Rewrite">
+        <![CDATA[Rewrite(f);]]> 
+      </Block>
+      <Block Caption="While">
+        <![CDATA[while not EOF(f) do
+  begin
+  |
+  end;]]> 
+      </Block>
+      <Block Caption="Writeln">
+        <![CDATA[Writeln(f, |);]]> 
+      </Block>
+      <Block Caption="Readln">
+        <![CDATA[Readln(f, |);]]> 
+      </Block>
+      <Block Caption="CloseFile">
+        <![CDATA[CloseFile(f);]]> 
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Assign / Free" HotKey="A">
+  <Template Caption="if Assigned then Free" HotKey="D">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[if Assigned({{VarName}}) then {{VarName}}.Free;]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="if Assigned then FreeAndNIL" HotKey="F">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[if Assigned({{VarName}}) then FreeAndNIL({{VarName}});]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="FreeAndNIL" HotKey="I">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[FreeAndNIL({{VarName}});]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="if Assigned then" HotKey="A">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[if Assigned({{VarName}}) then ]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="if not Assigned then" HotKey="N">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[if not Assigned({{VarName}}) then ]]>
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Other" HotKey="O">
+  <Template Caption="Interface declaration" HotKey="I" >
+    <Variables>
+      <Variable Caption="Interface name" Name="InterfaceName" DefaultValue="INewInterface" />
+      <Variable Caption="GUID" Name="GUID" DefaultValue="'GUID'" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[const
+  IID_{{InterfaceName}}: TGUID = {{GUID}};
+  SID_{{InterfaceName}} = {{GUID}};
+type {{InterfaceName}} = interface
+  [SID_{{InterfaceName}}]
+  end;
+
+]]>
+      </Block>
+    </Blocks>
+  </Template>
+  <Template Caption="FillChar(var, sizeof(var), 0)" HotKey="C">
+    <Variables>
+      <Variable Caption="Variable name" Name="VarName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[FillChar({{VarName}}, SizeOf({{VarName}}), 0);]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="CheckForm" HotKey="D">
+    <Variables>
+      <Variable Caption="Dialog class name" Name="ClassName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Implementation">
+        <![CDATA[dlg := {{ClassName}}.Create(NIL);
+try
+  cs.Set_('');
+  Result := dlg.|();
+finally
+  FreeAndNIL(dlg);
+end; // try]]>
+      </Block>
+      <Block Caption="Declaration">
+        <![CDATA[dlg: {{ClassName}};
+]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="MessageBox" HotKey="" ShortCut="mb" >
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[MessageBox(0, PChar('|'), '', 0);]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Set of (enum)" HotKey="S">
+    <Variables>
+      <Variable Caption="Type Name" Name="TypeName" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[type
+  T{{TypeName}} = (|);
+  T{{TypeName}}s = set of T{{TypeName}};
+const
+  {{TypeName}}All = [Low(T{{TypeName}})..High(T{{TypeName}})];
+]]>
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="Messages" HotKey="M">
+  <Template Caption="On_DExxx(...)" HotKey="O">
+    <Variables>
+      <Variable Caption="Event class" Name="EventClass" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[procedure On_{{EventClass}}(AEvent: {{EventClass}});]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Command Execute Handler(...)" HotKey="E">
+    <Variables>
+      <Variable Caption="Event class" Name="EventClass" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[procedure {{EventClass}}_Execute_Handler(ACommand: TCommand; AEvent: {{EventClass}});]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="AskParams Handler(...)" HotKey="A">
+    <Variables>
+      <Variable Caption="Event class" Name="EventClass" DefaultValue="" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[function {{EventClass}}_AskParams(AEvent: {{EventClass}}): Boolean;]]>
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="MessageBus.Sign" HotKey="S">
+    <Variables>
+      <Variable Caption="MessageBus" Name="MessageBus" DefaultValue="MessageBus" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{MessageBus}}.SignObject(Self,
+  [],
+  [@]);
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="MessageBus.Unsign" HotKey="U">
+    <Variables>
+      <Variable Caption="MessageBus" Name="MessageBus" DefaultValue="MessageBus" />
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{{MessageBus}}.UnsignObject(Self);]]> 
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+
+<Folder Caption="App Layers" HotKey="1">
+  <Template Caption="Layer : Domain" HotKey="D">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER DOMAIN}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : BusinessLogic" HotKey="B">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER BLL}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : Infrastructure" HotKey="I">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER INFRASTRUCTURE}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : AppInfrastructure" HotKey="A">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER APP_INFRASTRUCTURE}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : UI" HotKey="U">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER UI}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : UI Model">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER UI_MODEL}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : UI Logic">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER UI_LOGIC}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+
+  <Template Caption="Layer : Persistence" HotKey="P">
+    <Variables>
+    </Variables>
+    <Blocks>
+      <Block Caption="Declaration">
+        <![CDATA[{.UNIT_LAYER PL}
+
+]]> 
+      </Block>
+    </Blocks>
+  </Template>
+</Folder>
+</CodeTemplates>

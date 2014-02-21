@@ -1,0 +1,6 @@
+imgClass BITMAP "Class.bmp"
+imgUnit BITMAP "Unit.bmp"
+imgInterface BITMAP "Interface.bmp"
+imgType BITMAP "Type.bmp"
+imgVariable BITMAP "Variable.bmp"
+imgUnitGray BITMAP "UnitGray.bmp"
