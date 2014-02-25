@@ -86,6 +86,7 @@ contains
   TLB_Excel_XP in '..\..\TLB_D7\TLB_Excel_XP.pas',
   TLB_Office_XP in '..\..\TLB_D7\TLB_Office_XP.pas',
   TLB_VBIDE_XP in '..\..\TLB_D7\TLB_VBIDE_XP.pas',
-  TLB_Word_XP in '..\..\TLB_D7\TLB_Word_XP.pas';
+  TLB_Word_XP in '..\..\TLB_D7\TLB_Word_XP.pas',
+  _FileOps in '..\..\Classes\_FileOps.pas';
 
 end.

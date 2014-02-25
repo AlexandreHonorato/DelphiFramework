@@ -51,7 +51,16 @@ function ExpandEnvStrings(const Value: String): String;
 
 function IsPas(const AFileName: String): Boolean;
 
+function Date2FileName(ADate: TDateTime): String;
+
 implementation
+
+function Date2FileName(ADate: TDateTime): String;
+var Y, M, D: Word;
+begin
+DecodeDate(ADate, Y, M, D);
+Result:=IntToStr(Y)+'.'+LeadingSymbols(IntToStr(M), 2, '0')+'.'+LeadingSymbols(IntToStr(D), 2, '0');
+end;
 
 function IsPas(const AFileName: String): Boolean;
 begin

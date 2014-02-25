@@ -52,6 +52,7 @@ contains
   _DBSQL in '..\..\Components\_DBSQL.pas',
   _EnumFiles in '..\..\Components\_EnumFiles.pas',
   _Frames in '..\..\Components\_Frames.pas',
-  _SmartDockTree2 in '..\..\Components\_SmartDockTree2.pas';
+  _SmartDockTree2 in '..\..\Components\_SmartDockTree2.pas',
+  FileOps in '..\..\Components\FileOps.pas';
 
 end.

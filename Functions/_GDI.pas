@@ -2,7 +2,7 @@ unit _GDI;
 
 interface
 
-uses Windows, Graphics, Themes;
+uses SysUtils, Windows, Graphics, Themes;
 
 function MyDrawText(DC: HDC; S: String; var R: TRect; Format: Word = DT_VCENTER or DT_SINGLELINE or DT_NOPREFIX): Integer;
 
@@ -19,9 +19,62 @@ const CHECK_SIZE = 13;
 procedure DrawCheck(ACanvas: TCanvas; ARect: TRect; AChecked: Boolean); overload;
 procedure DrawCheck(ACanvas: TCanvas; ALeft, ATop: Integer; AChecked: Boolean); overload;
 
+procedure RotateBitmap90Degrees(Bitmap: TBitmap; ClockWise: Boolean);
+
 implementation
 
 uses Classes;
+
+procedure RotateBitmap90Degrees(Bitmap: TBitmap; ClockWise: Boolean);
+
+type
+  TRGB = record
+    B, G, R: Byte;
+  end;
+  pRGB = ^TRGB;
+
+  pByteArray = ^TByteArray;
+
+var x, y, W, H, v1, v2: Integer;
+    Dest: pRGB;
+    VertArray: array of pByteArray;
+    Bmp: TBitmap;
+
+begin
+Bitmap.PixelFormat := pf24Bit;
+Bmp := TBitmap.Create;
+
+try
+  Bmp.Assign(Bitmap);
+  W := Bitmap.Width - 1;
+  H := Bitmap.Height - 1;
+
+  Bitmap.Width := H + 1;
+  Bitmap.Height := W + 1;
+  SetLength(VertArray, H + 1);
+  v1 := 0;
+  v2 := 0;
+  if ClockWise then v1 := H else v2 := W;
+  for y := 0 to H do VertArray[y] := Bmp.ScanLine[Abs(v1 - y)];
+  for x := 0 to W do
+    begin
+    Dest := Bitmap.ScanLine[x];
+    for y := 0 to H do
+      begin
+      v1 := Abs(v2 - x)*3;
+      with Dest^ do
+        begin
+        B := VertArray[y, v1];
+        G := VertArray[y, v1+1];
+        R := VertArray[y, v1+2];
+        end;
+      Inc(Dest);
+      end;
+    end
+finally
+  Bmp.Free;
+end; // try
+end;
 
 procedure DrawCheck(ACanvas: TCanvas; ARect: TRect; AChecked: Boolean);
 var
